@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Breezy Archives\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-02 09:09+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Joel Lee <elohim@gmail.com>\n"
+"Language-Team: Joel Lee <elohim@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;_t;_n:1,2;_ne:1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n==1?0:1;\n"
+"X-Poedit-Country: TAIWAN\n"
+"X-Poedit-SearchPath-0: D:\\htdocs\\_\\bcse-svn\\habari-extras\\plugins\\deliciousfeed\n"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:53
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:68
+#, fuzzy
+msgid "Configure"
+msgstr "設定"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:71
+msgid "Delicious Username"
+msgstr "Delicious 帳號"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:75
+msgid "Tags (seperate by space)"
+msgstr "標籤（空白分隔）"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:77
+msgid "&#8470; of Posts"
+msgstr "書籤數量"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:81
+#, fuzzy
+msgid "Cache Expiry (in seconds)"
+msgstr "暫存檔保存期限（秒）"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:86
+#, fuzzy
+msgid "Save"
+msgstr "儲存"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:87
+#, fuzzy
+msgid "Options saved"
+msgstr "設定已儲存"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:97
+msgid "Your Delicious username is not valid."
+msgstr "您輸入的不是正確的 Delicious 帳號。"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:105
+#, fuzzy
+msgid "This field must be positive integer."
+msgstr "此欄位必須填入正整數。"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:141
+msgid "Unable to contact Delicious."
+msgstr "無法連接到 Delicious 。"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:149
+msgid "Response is not correct, maybe Delicious server is down or API is changed."
+msgstr "網站回應錯誤，可能是連接不上 Delicious 伺服器或 API 有更新。"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:180
+msgid "DeliciousFeed Plugin is not configured properly."
+msgstr "DeliciousFeed 外掛尚未正確設定。"
+

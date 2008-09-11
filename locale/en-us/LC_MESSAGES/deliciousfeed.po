@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Breezy Archives\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-02 07:34+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Joel Lee <elohim@gmail.com>\n"
+"Language-Team: Joel Lee <elohim@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;_t;_n:1,2;_ne:1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n==1?0:1;\n"
+"X-Poedit-SearchPath-0: D:\\htdocs\\_\\bcse-svn\\habari-extras\\plugins\\deliciousfeed\n"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:53
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:68
+msgid "Configure"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:71
+msgid "Delicious Username"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:75
+msgid "Tags (seperate by space)"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:77
+msgid "&#8470; of Posts"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:81
+msgid "Cache Expiry (in seconds)"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:86
+msgid "Save"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:87
+msgid "Options saved"
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:97
+msgid "The username is not valid."
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:105
+msgid "This field must be positive integer."
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:141
+msgid "Unable to contact Delicious."
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:149
+msgid "Response is not correct, maybe Delicious server is down or API is changed."
+msgstr ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\deliciousfeed/deliciousfeed.plugin.php:180
+#, php-format
+msgid "%s is not configured properly."
+msgstr ""
+
