@@ -23,7 +23,7 @@ class DeliciousFeed extends Plugin
 	{
 		return array(
 			'name' => 'DeliciousFeed',
-			'version' => '0.2',
+			'version' => '0.3-pre',
 			'url' => 'http://blog.bcse.info/deliciousfeed-plugin-for-habari',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
