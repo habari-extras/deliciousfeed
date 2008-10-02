@@ -23,7 +23,7 @@ class DeliciousFeed extends Plugin
 	{
 		return array(
 			'name' => 'DeliciousFeed',
-			'version' => '0.3-pre',
+			'version' => '0.5-0.3-pre',
 			'url' => 'http://blog.bcse.info/deliciousfeed-plugin-for-habari',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
@@ -227,16 +227,16 @@ class DeliciousPost extends stdClass
 				return $this->u;
 				break;
 			case 'title':
-				return $this->d;
+				return htmlspecialchars($this->d);
 				break;
 			case 'desc':
-				return $this->n;
+				return htmlspecialchars($this->n);
 				break;
 			case 'tags':
-				return $this->t;
+				return htmlspecialchars($this->t);
 				break;
 			case 'tags_text':
-				return implode(' ', $this->t);
+				return htmlspecialchars(implode(' ', $this->t));
 				break;
 			case 'timestamp':
 				return $this->dt;
