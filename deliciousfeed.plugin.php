@@ -24,11 +24,11 @@ class DeliciousFeed extends Plugin
 		return array(
 			'name' => 'DeliciousFeed',
 			'version' => '0.5-0.3-pre',
-			'url' => 'http://blog.bcse.info/deliciousfeed-plugin-for-habari',
+			'url' => 'http://code.google.com/p/bcse/wiki/DeliciousFeed',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
 			'license' => 'Apache License 2.0',
-			'description' => 'Show bookmarks from Delicious feeds',
+			'description' => 'Display your latest bookmarks on your blog.',
 			'copyright' => '2008'
 		);
 	}
