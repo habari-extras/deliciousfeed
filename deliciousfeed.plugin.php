@@ -23,7 +23,7 @@ class DeliciousFeed extends Plugin
 	{
 		return array(
 			'name' => 'DeliciousFeed',
-			'version' => '0.5-0.3-pre',
+			'version' => '0.4-pre',
 			'url' => 'http://code.google.com/p/bcse/wiki/DeliciousFeed',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
