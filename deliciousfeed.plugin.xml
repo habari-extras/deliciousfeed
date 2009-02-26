@@ -1,10 +1,10 @@
 <plugin>
 	<name>DeliciousFeed</name>
-	<version>0.4-pre</version>
+	<version>0.4</version>
 	<url>http://code.google.com/p/bcse/wiki/DeliciousFeed</url>
 	<author>Joel Lee</author>
 	<authorurl>http://blog.bcse.info/</authorurl>
-	<license>Apache License 2.0</license>
+	<license url="http://bcse.googlecode.com/svn/LICENSE">Apache License 2.0</license>
 	<description>Display your latest bookmarks on your blog.</description>
 	<copyright>2008</copyright>
 </plugin>
