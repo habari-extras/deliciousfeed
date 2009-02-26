@@ -8,12 +8,16 @@ class DeliciousFeed extends Plugin
 {
 	private $config = array();
 	private $class_name = '';
-	private $default_options = array(
-		'user_id' => '',
-		'tags' => '',
-		'num_item' => '15',
-		'cache_expiry' => 1800
-	);
+
+	private static function default_options()
+	{
+		return array (
+			'user_id' => '',
+			'tags' => '',
+			'num_item' => '15',
+			'cache_expiry' => 1800
+		);
+	}
 
 	/**
 	 * Required plugin information
@@ -23,13 +27,12 @@ class DeliciousFeed extends Plugin
 	{
 		return array(
 			'name' => 'DeliciousFeed',
-			'version' => '0.4-pre',
+			'version' => '0.4',
 			'url' => 'http://code.google.com/p/bcse/wiki/DeliciousFeed',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
 			'license' => 'Apache License 2.0',
-			'description' => 'Display your latest bookmarks on your blog.',
-			'copyright' => '2008'
+			'description' => _t('Display your latest bookmarks on your blog.', $this->class_name)
 		);
 	}
 
@@ -190,7 +193,7 @@ class DeliciousFeed extends Plugin
 	{
 		if (realpath($file) === __FILE__) {
 			$this->class_name = strtolower(get_class($this));
-			foreach ($this->default_options as $name => $value) {
+			foreach (self::default_options() as $name => $value) {
 				$current_value = Options::get($this->class_name . '__' . $name);
 				if (is_null($current_value)) {
 					Options::set($this->class_name . '__' . $name, $value);
@@ -205,7 +208,7 @@ class DeliciousFeed extends Plugin
 	public function action_init()
 	{
 		$this->class_name = strtolower(get_class($this));
-		foreach ($this->default_options as $name => $value) {
+		foreach (self::default_options() as $name => $value) {
 			$this->config[$name] = Options::get($this->class_name . '__' . $name);
 		}
 		$this->load_text_domain($this->class_name);
