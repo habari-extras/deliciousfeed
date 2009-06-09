@@ -1,11 +1,10 @@
-<plugin>
+<?xml version="1.0" encoding="utf-8" ?>
+<pluggable type="plugin">
 	<name>DeliciousFeed</name>
+	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
+	<author url="http://blog.bcse.info/">Morgante Pell</author>
 	<version>0.4</version>
 	<url>http://code.google.com/p/bcse/wiki/DeliciousFeed</url>
-	<author>Joel Lee</author>
-	<authorurl>http://blog.bcse.info/</authorurl>
-	<license url="http://bcse.googlecode.com/svn/LICENSE">Apache License 2.0</license>
-	<description>Display your latest bookmarks on your blog.</description>
-	<copyright>2008</copyright>
-</plugin>
-
+	<description><![CDATA[Display your latest bookmarks on your blog.]]></description>
+	<copyright>2009</copyright>
+</pluggable>

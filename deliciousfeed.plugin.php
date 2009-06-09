@@ -20,23 +20,6 @@ class DeliciousFeed extends Plugin
 	}
 
 	/**
-	 * Required plugin information
-	 * @return array The array of information
-	 **/
-	public function info()
-	{
-		return array(
-			'name' => 'DeliciousFeed',
-			'version' => '0.4',
-			'url' => 'http://code.google.com/p/bcse/wiki/DeliciousFeed',
-			'author' => 'Joel Lee',
-			'authorurl' => 'http://blog.bcse.info/',
-			'license' => 'Apache License 2.0',
-			'description' => _t('Display your latest bookmarks on your blog.', $this->class_name)
-		);
-	}
-
-	/**
 	 * Add update beacon support
 	 **/
 	public function action_update_check()
