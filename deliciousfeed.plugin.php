@@ -109,7 +109,7 @@ class DeliciousFeed extends Plugin
 		
 		if (false || Cache::has($cache_name)) {
 			// Read from cache
-			return Cache::get($cache_name);
+			return unserialize(Cache::get($cache_name));
 		}
 		else {
 			$url = 'http://feeds.delicious.com/v2/json/' . $params['user_id'];
@@ -134,14 +134,14 @@ class DeliciousFeed extends Plugin
 					// Response is not JSON
 					throw new Exception( _t('Response is not correct, maybe Delicious server is down or API is changed.', $this->class_name) );
 				} else {
-					$deliciousfeed = new ArrayObject();
+					$deliciousfeed = array();
 					foreach($feed as $link) {
 						$deliciousfeed[] = new DeliciousPost($link);
 					}
 				}
 
 				// Do cache
-				Cache::set($cache_name, $deliciousfeed, $params['cache_expiry']);
+				Cache::set($cache_name, serialize($deliciousfeed), $params['cache_expiry']);
 
 				return $deliciousfeed;
 			}
