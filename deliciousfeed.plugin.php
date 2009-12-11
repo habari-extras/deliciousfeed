@@ -107,7 +107,7 @@ class DeliciousFeed extends Plugin
 	{
 		$cache_name = $this->class_name . '__' . md5(serialize($params));
 		
-		if (Cache::has($cache_name)) {
+		if (false || Cache::has($cache_name)) {
 			// Read from cache
 			return Cache::get($cache_name);
 		}
@@ -124,20 +124,20 @@ class DeliciousFeed extends Plugin
 				$call->set_timeout(5);
 				$result = $call->execute();
 				if (Error::is_error($result)) {
-					throw Error::raise(_t('Unable to contact Delicious.', $this->class_name));
+					throw new Exception( _t('Unable to contact Delicious.', $this->class_name) );
 				}
 				$response = $call->get_response_body();
 
 				// Decode JSON
-				$deliciousfeed = json_decode($response);
-				if (!is_array($deliciousfeed)) {
+				$feed = json_decode($response);
+				if ( !is_array($feed) ) {
 					// Response is not JSON
-					throw Error::raise(_t('Response is not correct, maybe Delicious server is down or API is changed.', $this->class_name));
+					throw new Exception( _t('Response is not correct, maybe Delicious server is down or API is changed.', $this->class_name) );
 				} else {
-					// Transform to DeliciousPost objects
-					$serial = serialize($deliciousfeed);
-					$serial = str_replace('O:8:"stdClass":', 'O:13:"DeliciousPost":', $serial);
-					$deliciousfeed = unserialize($serial);
+					$deliciousfeed = array();
+					foreach($feed as $link) {
+						$deliciousfeed[] = new DeliciousPost($link);
+					}
 				}
 
 				// Do cache
@@ -172,15 +172,13 @@ class DeliciousFeed extends Plugin
 	/**
 	 * On plugin activation, set the default options
 	 */
-	public function action_plugin_activation($file)
+	public function action_plugin_activation()
 	{
-		if (realpath($file) === __FILE__) {
-			$this->class_name = strtolower(get_class($this));
-			foreach (self::default_options() as $name => $value) {
-				$current_value = Options::get($this->class_name . '__' . $name);
-				if (is_null($current_value)) {
-					Options::set($this->class_name . '__' . $name, $value);
-				}
+		$this->class_name = strtolower(get_class($this));
+		foreach (self::default_options() as $name => $value) {
+			$current_value = Options::get($this->class_name . '__' . $name);
+			if (is_null($current_value)) {
+				Options::set($this->class_name . '__' . $name, $value);
 			}
 		}
 	}
@@ -199,38 +197,48 @@ class DeliciousFeed extends Plugin
 	}
 }
 
-class DeliciousPost extends stdClass
+class DeliciousPost
 {
-	public $u = '';
-	public $d = '';
-	public $t = array();
-	public $dt = '';
-	public $n = '';
+	public $data = array();
 
-	public function __get($name) {
+	public function __construct(stdClass $data)
+	{
+		foreach( $data as $name => $value ) {
+			$this->data[$name] = $value;
+		}
+	}
+	
+	public function __get($name)
+	{
 		switch ($name) {
 			case 'url':
-				return $this->u;
+				return $this->data['u'];
 				break;
 			case 'title':
-				return htmlspecialchars($this->d);
+				return htmlspecialchars($this->data['d']);
 				break;
 			case 'desc':
-				return htmlspecialchars($this->n);
+				return htmlspecialchars($this->data['n']);
 				break;
 			case 'tags':
-				return htmlspecialchars($this->t);
+				return htmlspecialchars($this->data['t']);
 				break;
 			case 'tags_text':
-				return htmlspecialchars(implode(' ', $this->t));
+				return htmlspecialchars(implode(' ', $this->data['t']));
 				break;
 			case 'timestamp':
-				return $this->dt;
+				return $this->data['dt'];
 				break;
 			default:
 				return FALSE;
 				break;
 		}
+	}
+	
+	public function __set($name, $value)
+	{
+		$this->data[$name] = $value;
+		return $this->data[$name];
 	}
 }
 ?>
