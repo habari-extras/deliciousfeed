@@ -134,7 +134,7 @@ class DeliciousFeed extends Plugin
 					// Response is not JSON
 					throw new Exception( _t('Response is not correct, maybe Delicious server is down or API is changed.', $this->class_name) );
 				} else {
-					$deliciousfeed = array();
+					$deliciousfeed = new ArrayObject();
 					foreach($feed as $link) {
 						$deliciousfeed[] = new DeliciousPost($link);
 					}
