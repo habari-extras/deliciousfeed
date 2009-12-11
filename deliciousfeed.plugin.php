@@ -107,7 +107,7 @@ class DeliciousFeed extends Plugin
 	{
 		$cache_name = $this->class_name . '__' . md5(serialize($params));
 		
-		if (false || Cache::has($cache_name)) {
+		if ( Cache::has($cache_name) ) {
 			// Read from cache
 			return unserialize(Cache::get($cache_name));
 		}
