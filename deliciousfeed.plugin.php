@@ -105,11 +105,11 @@ class DeliciousFeed extends Plugin
 
 	private function load_feeds($params = array())
 	{
-		$cache_name = $this->class_name . '__' . md5(serialize($params));
+		$cache_group =  $this->class_name . '__' . md5(serialize($params));
 		
-		if ( Cache::has($cache_name) ) {
+		if ( Cache::has_group($cache_group) ) {
 			// Read from cache
-			return unserialize(Cache::get($cache_name));
+			return Cache::get_group($cache_group);
 		}
 		else {
 			$url = 'http://feeds.delicious.com/v2/json/' . $params['user_id'];
@@ -135,13 +135,15 @@ class DeliciousFeed extends Plugin
 					throw new Exception( _t('Response is not correct, maybe Delicious server is down or API is changed.', $this->class_name) );
 				} else {
 					$deliciousfeed = array();
-					foreach($feed as $link) {
-						$deliciousfeed[] = new DeliciousPost($link);
+					foreach($feed as $i => $link) {
+						$delicious_post = new DeliciousPost($link);
+						$deliciousfeed[] = $delicious_post;
+						Cache::set( array($cache_group, $i), $delicious_post, $params['cache_expiry'] );
 					}
 				}
 
 				// Do cache
-				Cache::set($cache_name, serialize($deliciousfeed), $params['cache_expiry']);
+				
 
 				return $deliciousfeed;
 			}
