@@ -2,9 +2,10 @@
 <pluggable type="plugin">
 	<name>DeliciousFeed</name>
 	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
-	<author url="http://blog.bcse.info/">Morgante Pell</author>
-	<version>0.4</version>
+	<author url="http://blog.bcse.tw/">Joel Lee</author>
+	<version>0.5</version>
 	<url>http://code.google.com/p/bcse/wiki/DeliciousFeed</url>
 	<description><![CDATA[Display your latest bookmarks on your blog.]]></description>
-	<copyright>2009</copyright>
+	<copyright>2011</copyright>
+	<guid>b0a81efa-c59a-41f2-b71e-b2f41d0885f1</guid>
 </pluggable> 
