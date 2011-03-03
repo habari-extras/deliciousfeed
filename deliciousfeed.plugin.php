@@ -119,7 +119,7 @@ class DeliciousFeed extends Plugin
 					$bookmarks = self::parse_data( $block, $data );
 					$block->bookmarks = $bookmarks;
 					// Do cache
-					Cache::set( $cache_name, $block->images, $block->cache );
+					Cache::set( $cache_name, $block->bookmarks, $block->cache_expiry );
 				}
 				catch ( Exception $e ) {
 					$block->error = $e->getMessage( );
